@@ -10,10 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Movie List',
+      theme: ThemeData(primaryColor: Colors.blueGrey[900]),
       home: MyHomePage(),
     );
   }

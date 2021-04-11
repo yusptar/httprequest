@@ -3,7 +3,7 @@ import 'package:httprequest/models/movie.dart';
 
 class MovieDetail extends StatelessWidget {
   final Movie movie;
-  final String imgPath = 'https://image.tmdb.org/t/p/w500/';
+  final String imgPath = 'https://image.tmdb.org/t/p/w500';
 
   MovieDetail(this.movie);
 
@@ -31,6 +31,36 @@ class MovieDetail extends StatelessWidget {
                 child: Image.network(path),
               ),
               Container(
+                margin: EdgeInsets.all(5),
+                child: Text(
+                  movie.title,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(5),
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Rating:',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      WidgetSpan(
+                        child: Icon(Icons.star),
+                      ),
+                      TextSpan(
+                        text: movie.voteAverage.toString(),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
                 child: Text(movie.overview),
                 padding: EdgeInsets.only(left: 16, right: 16),
               ),

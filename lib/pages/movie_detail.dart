@@ -43,7 +43,7 @@ class MovieDetail extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Rating:',
+                        text: 'Rating ',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -58,6 +58,15 @@ class MovieDetail extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.all(10),
+                child: Text(
+                  'Overview',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                padding: EdgeInsets.only(left: 16, right: 16),
               ),
               Container(
                 margin: EdgeInsets.all(10),

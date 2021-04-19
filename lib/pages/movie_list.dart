@@ -39,17 +39,28 @@ class _MovieListState extends State<MovieList> {
         itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
         itemBuilder: (context, int position) {
           return Card(
-            color: Colors.white,
-            elevation: 2.0,
+            margin: EdgeInsets.all(10),
+            color: Colors.blueGrey[700],
+            elevation: 3.0,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.black, width: 5),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: ListTile(
+              contentPadding: EdgeInsets.all(10),
               leading: CircleAvatar(
                 radius: 30,
                 backgroundImage:
                     NetworkImage(image + movies[position].posterPath),
               ),
-              title: Text(movies[position].title),
+              title: Text(
+                movies[position].title,
+                style: TextStyle(color: Colors.white),
+              ),
+              trailing: Icon(Icons.arrow_right_alt_sharp),
               subtitle: Text(
-                'Rating = ' + movies[position].voteAverage.toString(),
+                movies[position].voteAverage.toString(),
+                style: TextStyle(color: Colors.white),
               ),
               onTap: () {
                 MaterialPageRoute route = MaterialPageRoute(
